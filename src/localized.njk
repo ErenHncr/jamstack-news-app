@@ -1,0 +1,38 @@
+---
+title: Localized Content
+layout: base.njk
+pagination:
+  data: news
+  size: 1
+  alias: news
+permalink: /{{ news.country }}/index.html
+---
+
+<div class="container">
+    <h1>This is a page for you {{ news.country }}</h1>
+    <div class="vibe">You are great!</div>
+    <div class="love">
+      ❤️ 
+    </div>
+
+    <div id="weather" class="hidden">
+      <h2>Weather near you</h2>
+      <p class="city"></p>
+      <p class="temp"></p>
+      <p class="main"></p>
+      <p class="main"></p>
+    </div>
+
+    <ul>
+    {% for article in news.articles %}
+      <li>
+        <h2><a href="{{ article.url }}">{{ article.title }}</a></h2>
+        <span>{{ article.source.name }} - <time>{{ article.publishedAt }}</time> </span>
+      </li>
+    {% endfor %}
+    </ul>
+     
+</div>
+
+<script src="/js/vibe.js"></script>
+<script src="/js/weather.js"></script>
