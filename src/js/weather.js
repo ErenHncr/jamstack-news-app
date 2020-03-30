@@ -1,6 +1,6 @@
 function success(pos) {
 
-  const url = `/.neflify/functions/weatherapi?lat=${pos.coords.latitude}&lon=${pos.coords.longitude}&units=metric`;
+  const url = `/.netlify/functions/weatherapi?lat=${pos.coords.latitude}&lon=${pos.coords.longitude}&units=metric`;
   
   fetch(url)
     .then((response) => {
