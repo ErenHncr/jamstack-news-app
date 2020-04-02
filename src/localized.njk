@@ -9,12 +9,7 @@ permalink: /{{ news.country }}/index.html
 ---
 
 <div class="container">
-    <h1>This is a page for you {{ news.country }}</h1>
-    <div class="vibe">You are great!</div>
-    <div class="love">
-      ❤️ 
-    </div>
-
+    <h1>news</h1>
     <div id="weather" class="hidden">
       <h2>Weather near you</h2>
       <p class="city"></p>
@@ -23,11 +18,13 @@ permalink: /{{ news.country }}/index.html
       <p class="main"></p>
     </div>
 
-    <ul>
+    <ul class="news">
     {% for article in news.articles %}
       <li>
         <h2><a href="{{ article.url }}">{{ article.title }}</a></h2>
-        <span>{{ article.source.name }} - <time>{{ article.publishedAt }}</time> </span>
+        <img src="/img/star" width="100%" height="100px" style="background-size: cover;">
+        <span><img src="/img/star.png" width="25px" height="25px"></span>
+        <span>{{ article.source.name }}</span>
       </li>
     {% endfor %}
     </ul>

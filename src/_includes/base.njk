@@ -4,28 +4,26 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>{{ title }}</title>
-  <style>
-    body {
-      text-align: center;
-
-    }
-    .container {
-      width: 400px;
-      margin: 0 auto;
-    }
-    .love {
-      font-size: 4em;
-    }
-    .hidden {
-      display: none;
-    }
-
-  </style>
+  <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/style.css">
 </head>
 <body>
   <header>
-    <a href = "/" >Home page</a> | <a href = "/about" >About page</a>
+    <a href = "/" >NEWS</a>
+    <a href = "/about" >ABOUT</a>
+    <div>
+      <a href = "/gb/index.html" >GB</a>
+      <a href = "/fr/index.html" >FR</a>
+      <a href = "/tr/index.html" >TR</a>
+      <a href = "/about" >
+        <img src="/img/world-white.png">
+      </a>
+    </div>
   </header>
-  {{ content | safe }}
+  <div class="bg-yellow"></div>
+  <div class="content">
+    {{ content | safe }}
+  </div>
+  
 </body>
 </html>

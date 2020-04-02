@@ -1,0 +1,129 @@
+:root {
+  --yellow: #FFD200;
+  --black: #171717;
+  --white: #FFFFFF;
+  --orange: #FF4F28;
+  --cardbg:#F5F5F5;
+}
+
+html {
+  font-family: 'Montserrat', sans-serif;
+  box-sizing: border-box;
+  font-weight: 900;
+}
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+body {
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  background-color: var(--yellow);
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  height: 50px;
+  padding-top: 50px;
+  padding-right: 50px;
+}
+header a {
+  font-size: 2.3rem;
+  font-weight: 100;
+  margin-right: 13px;
+  color: var(--black);
+  margin-right: 40px;
+}
+header a:hover {
+  color: var(--orange);
+  transition: 0.2s;
+  border-bottom: 3px solid var(--orange);
+}
+
+header div {
+  display: grid;
+  align-items: center;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  margin: 0;
+  padding: 0;
+}
+
+header div a {
+  color: var(--white);
+  background-color: var(--black);
+  width: max-content;
+  padding: 2px 10px;
+  box-shadow: 2px 3px 3px rgba(0, 0, 0, 0.25);
+  border-radius: 1px;
+  font-size: 1.5rem;
+  text-align: center;
+  font-weight: 100;
+  margin-right: 10px;
+}
+
+header div img {
+  display: grid;
+  align-self: center;
+  justify-self: center;
+  height: 1.9rem;
+  width: 1.9rem;
+}
+
+.container {
+  margin: 0 auto;
+}
+
+.container ul {
+  padding: 0 50px;
+  display: grid;
+  gap: 20px;
+  grid-template-columns: repeat(auto-fit,minmax(200px,1fr));
+}
+
+li {
+  list-style: none;
+  font-size: 0.9rem;
+  padding: 5px 15px;
+}
+
+.news a {
+  text-decoration: none;
+  color: white;
+}
+.news li:nth-child(even) a:visited {
+  color: black;
+}
+.news li:nth-child(odd) a:visited {
+  color: white;
+}
+
+.news li:nth-child(even) {
+  color: black;
+  background-color: var(--cardbg);
+  
+}
+.news li:nth-child(odd) {
+  color: white;
+  background-color: var(--black);
+}
+
+
+.hidden {
+  display: none;
+}
+
+.bg-yellow {
+  background-color: var(--yellow);
+  height: 500px;
+  z-index: -1;
+  position: relative;
+}
+.content {
+  z-index: 1;
+  position: relative;
+  margin-top: -300px;
+}
+
