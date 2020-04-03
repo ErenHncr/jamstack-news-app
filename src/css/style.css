@@ -21,6 +21,10 @@ body {
   padding: 0;
 }
 
+a {
+  text-decoration: none;
+}
+
 header {
   background-color: var(--yellow);
   display: flex;
@@ -64,50 +68,69 @@ header div a {
   margin-right: 10px;
 }
 
-header div img {
+.container {
+  margin: 0 auto;
+}
+
+.container h1 {
+  font-size: 6rem;
+  color: #FF2E00;
+  text-shadow: 4px 6px 1px rgba(0, 0, 0, 0.25);
+  margin: 0 auto;
+
+  margin-left: 40px;
+}
+
+.news {
+  padding: 0 50px;
+  display: grid;
+  gap: 20px;
+  grid-template-columns: repeat(auto-fit,minmax(200px,1fr));
+  margin-top: 80px;
+}
+
+.newsImg{
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover;
+
+}
+
+.news img {
   display: grid;
   align-self: center;
   justify-self: center;
   height: 1.9rem;
   width: 1.9rem;
 }
-
-.container {
-  margin: 0 auto;
-}
-
-.container ul {
-  padding: 0 50px;
-  display: grid;
-  gap: 20px;
-  grid-template-columns: repeat(auto-fit,minmax(200px,1fr));
-}
-
-li {
+.news li {
   list-style: none;
   font-size: 0.9rem;
   padding: 5px 15px;
-}
-
-.news a {
-  text-decoration: none;
-  color: white;
-}
-.news li:nth-child(even) a:visited {
-  color: black;
-}
-.news li:nth-child(odd) a:visited {
-  color: white;
+  height: auto;
+  display: grid;
+  grid-template-rows: repeat(auto-fill, 1fr);
+  gap: 5px;
 }
 
 .news li:nth-child(even) {
-  color: black;
   background-color: var(--cardbg);
-  
+  color: black;
+  box-shadow: 4px 6px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 0px 0px 8px 0px;  
+}
+.news li:nth-child(even) a {
+  color: black;
+
 }
 .news li:nth-child(odd) {
-  color: white;
   background-color: var(--black);
+  color: white;
+  box-shadow: 4px 6px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 0px 0px 8px 0px;
+}
+.news li:nth-child(odd) a{
+  color: white;
 }
 
 
@@ -124,6 +147,39 @@ li {
 .content {
   z-index: 1;
   position: relative;
-  margin-top: -300px;
+  margin-top: -375px;
 }
 
+.active {
+  color: var(--orange);
+  border-bottom: 3px solid var(--orange);
+}
+
+.bottom {
+  display: grid;
+  grid-template-columns: 30px 1fr;
+  align-items: center;
+  justify-items: start;
+  gap: 5px;
+  padding: 5px;
+}
+.bottom span {
+  word-break: break-all;
+  width: fit-content;
+}
+
+h2 {
+  margin-bottom: 0;
+}
+
+.favorite {
+  padding: 0;
+  margin-right: 15px;
+  font-size: 1.5rem;
+}
+
+.favorite:hover {
+  transition: 0.2s;
+  border-bottom: 3px solid var(--orange);
+  margin-top: 3px;
+}

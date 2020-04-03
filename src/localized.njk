@@ -22,9 +22,11 @@ permalink: /{{ news.country }}/index.html
     {% for article in news.articles %}
       <li>
         <h2><a href="{{ article.url }}">{{ article.title }}</a></h2>
-        <img src="/img/star" width="100%" height="100px" style="background-size: cover;">
-        <span><img src="/img/star.png" width="25px" height="25px"></span>
-        <span>{{ article.source.name }}</span>
+        <img class="newsImg" src="{{ article.urlToImage }}">
+        <div class="bottom">
+          <span><img src="/img/start.png" width="15px" height="15px"></span>
+          <span>{{ article.source.name }}</span>
+        </div>
       </li>
     {% endfor %}
     </ul>
