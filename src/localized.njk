@@ -8,6 +8,7 @@ pagination:
 permalink: /{{ news.country }}/index.html
 ---
 
+
 <div class="container">
     <h1>news</h1>
     <div id="weather" class="hidden">
@@ -20,11 +21,11 @@ permalink: /{{ news.country }}/index.html
 
     <ul class="news">
     {% for article in news.articles %}
-      <li>
+      <li class="{{ article.title}} {{ article.source.name }} {{ article.url }} {{ article.urlToImage }}">
         <h2><a href="{{ article.url }}">{{ article.title }}</a></h2>
         <img class="newsImg" src="{{ article.urlToImage }}">
         <div class="bottom">
-          <span><img src="/img/start.png" width="15px" height="15px"></span>
+          <span class="addFav"><img src="/img/start.png" width="15px" height="15px"></span>
           <span>{{ article.source.name }}</span>
         </div>
       </li>
@@ -33,5 +34,4 @@ permalink: /{{ news.country }}/index.html
      
 </div>
 
-<script src="/js/vibe.js"></script>
 <script src="/js/weather.js"></script>

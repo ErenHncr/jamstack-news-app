@@ -1,15 +1,13 @@
 ---
-title: About page for you
+title: Favorites
 layout: base.njk
 ---
 
 <div class="container">
-    <h1>About</h1>
+    <h1>Favorites</h1>
     <p>It was made for you using HTML, CSS and Javascript. 
     And served as a JAMStack site.</p>
 </div>
 
-{% for item in news %}
-  <a class="country" href="/{{ item.country }}">{{ item.country }}</a>
-{% endfor %}
+<script src="/js/vibe.js"></script>
 

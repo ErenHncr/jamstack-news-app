@@ -9,7 +9,7 @@
 </head>
 <body>
   <header>
-    <a class="favorite" href = "/favorite" ><img src="/img/start.png" width="30px" height="30px" style="margin-top:5px"></a>
+    <a class="favorite" href = "/favorites" onmouseover="changeImg(this)" onmouseout="defaultImg(this)"><img src="/img/star.png" width="30px" height="30px" style="margin-top:5px"></a>
     <a href = "/" class="active" >NEWS</a>
     <a href = "/about" >ABOUT</a>
     <div>
@@ -25,6 +25,6 @@
   <div class="content">
     {{ content | safe }}
   </div>
-  
+  <script src="/js/vibe.js"></script>
 </body>
 </html>

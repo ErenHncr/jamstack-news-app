@@ -150,11 +150,6 @@ header div a {
   margin-top: -375px;
 }
 
-.active {
-  color: var(--orange);
-  border-bottom: 3px solid var(--orange);
-}
-
 .bottom {
   display: grid;
   grid-template-columns: 30px 1fr;
@@ -182,4 +177,17 @@ h2 {
   transition: 0.2s;
   border-bottom: 3px solid var(--orange);
   margin-top: 3px;
+}
+
+.country {
+  background-color: var(--black);
+  color: white;
+  padding: 5px 10px;
+  text-transform: uppercase;
+}
+
+
+.active {
+  color: var(--orange);
+  border-bottom: 3px solid var(--orange);
 }
