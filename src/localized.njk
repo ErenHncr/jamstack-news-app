@@ -25,7 +25,8 @@ permalink: /{{ news.country }}/index.html
         <h2><a href="{{ article.url }}">{{ article.title }}</a></h2>
         <img class="newsImg" src="{{ article.urlToImage }}">
         <div class="bottom">
-          <span class="addFav"><img src="/img/start.png" width="15px" height="15px"></span>
+          <span class="addFav" onmouseover="onFavImg(this)" onmouseout="outFavImg(this)">
+            <img src="/img/start.png" width="15px" height="15px"> </span>
           <span>{{ article.source.name }}</span>
         </div>
       </li>

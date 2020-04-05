@@ -1,16 +1,19 @@
 document.querySelector(".news").addEventListener('click', (e) => {
 
-  let selectedLi = e.currentTarget.querySelector('.addFav').parentNode.parentNode.classList;
-  let title = "", url, urlToImage, source;
-  source = selectedLi[selectedLi.length-3];
-  url = selectedLi[selectedLi.length-2];
-  urlToImage = selectedLi[selectedLi.length-1];
+  if(e.target.parentNode.className == "addFav") {
 
-  for (let i = 0; i < selectedLi.length-3; i++) {
-    title +=  selectedLi[i] + " ";   
+    let selectedLi = e.target.parentNode.parentNode.parentNode.classList;
+    let title = "", url, urlToImage, source;
+    source = selectedLi[selectedLi.length-3];
+    url = selectedLi[selectedLi.length-2];
+    urlToImage = selectedLi[selectedLi.length-1];
+
+    for (let i = 0; i < selectedLi.length-3; i++) {
+      title +=  selectedLi[i] + " ";   
+    }
+    
+    localS(url, urlToImage, title, source);
   }
-
-  localS(url, urlToImage, title, source);
 });
 
 function localS(url, urlToImage, title, source) {
@@ -20,18 +23,30 @@ function localS(url, urlToImage, title, source) {
     title: title,
     source: source
   };
+
   if(localStorage.getItem('news') == undefined){
     let arr = [];
     arr[0] = JSON.stringify(article);
-    localStorage.setItem('news', arr);
+    localStorage.setItem('news', JSON.stringify(arr));
   }
   else {
-    let art = JSON.parse(localStorage.getItem('news'));
-    console.log(art.length);
-    let z = [...art, article]; 
-    localStorage.setItem('news', JSON.stringify(z));
-    // // localStorage.setItem('news',articles);
-    console.log(z);
+    console.log(article.title);
+    let articles = JSON.parse(localStorage.getItem('news'));
+    let check = false;
+    articles.forEach(e => {
+      if(e.url == article.url) {
+        check = true;
+      }
+    });
+    let arr = [];
+    console.log(check);
+    if(check) {
+      arr = [...articles];
+    }
+    else {
+      arr = [...articles, article];
+    }
+    localStorage.setItem('news', JSON.stringify(arr));
   }
 }
 
@@ -43,6 +58,13 @@ function changeImg() {
 
 function defaultImg() {
   document.querySelector('.favorite').children[0].src = "/img/star.png";
+}
+
+function onFavImg(e) {
+  e.children[0].src = "/img/onfav.png";
+}
+function outFavImg(e) {
+  e.children[0].src = "/img/start.png";
 }
 
 
