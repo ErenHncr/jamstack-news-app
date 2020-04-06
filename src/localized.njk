@@ -8,31 +8,41 @@ pagination:
 permalink: /{{ news.country }}/index.html
 ---
 
-
 <div class="container">
-    <h1>news</h1>
-    <div id="weather" class="hidden">
-      <h2>Weather near you</h2>
-      <p class="city"></p>
-      <p class="temp"></p>
-      <p class="main"></p>
-      <p class="main"></p>
-    </div>
+  <h1>news</h1>
+  <div id="weather" class="hidden">
+    <h2>Weather near you</h2>
+    <p class="city"></p>
+    <p class="temp"></p>
+    <p class="main"></p>
+    <p class="main"></p>
+  </div>
 
-    <ul class="news">
+  <ul class="news">
     {% for article in news.articles %}
-      <li class="{{ article.title}} {{ article.source.name }} {{ article.url }} {{ article.urlToImage }}">
-        <h2><a href="{{ article.url }}">{{ article.title }}</a></h2>
-        <img class="newsImg" src="{{ article.urlToImage }}">
-        <div class="bottom">
-          <span class="addFav" onmouseover="onFavImg(this)" onmouseout="outFavImg(this)">
-            <img src="/img/start.png" width="15px" height="15px"> </span>
-          <span>{{ article.source.name }}</span>
-        </div>
-      </li>
+    <li
+      class="{{ article.title }} {{ article.source.name }} {{ article.url }} {{
+        article.urlToImage
+      }}"
+    >
+      <h2>
+        <a href="{{ article.url }}">{{ article.title }}</a>
+      </h2>
+      <img class="newsImg" src="{{ article.urlToImage }}" />
+      <div class="bottom">
+        <span
+          class="addFav"
+          onclick="clickFavImg(this)"
+          onmouseover="onFavImg(this)"
+          onmouseout="outFavImg(this)"
+        >
+          <img src="/img/start.png" width="15px" height="15px" />
+        </span>
+        <span>{{ article.source.name }}</span>
+      </div>
+    </li>
     {% endfor %}
-    </ul>
-     
+  </ul>
 </div>
 
 <script src="/js/weather.js"></script>

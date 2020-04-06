@@ -1,30 +1,48 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>{{ title }}</title>
-  <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="/css/style.css">
-</head>
-<body>
-  <header>
-    <a class="favorite" href = "/favorites" onmouseover="changeImg(this)" onmouseout="defaultImg(this)"><img src="/img/star.png" width="30px" height="30px" style="margin-top:5px"></a>
-    <a href = "/" class="active" >NEWS</a>
-    <a href = "/about" >ABOUT</a>
-    <div>
-      <a href = "/gb/index.html" >GB</a>
-      <a href = "/fr/index.html" >FR</a>
-      <a href = "/tr/index.html" >TR</a>
-      <a href = "/about" style="padding: 0 10px;">
-        <img src="/img/world-white.png" width="23px" height="23px" style="padding: 0; margin: 0; margin-top:5px;">
-      </a>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{{ title }}</title>
+    <link
+      href="https://fonts.googleapis.com/css?family=Montserrat&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/css/style.css" />
+  </head>
+  <body>
+    <header>
+      <a
+        class="favorite"
+        href="/favorites"
+        onmouseover="changeImg(this)"
+        onmouseout="defaultImg(this)"
+        ><img 
+          src="/img/star.png"
+          width="30px"
+          height="30px"
+          style="margin-top: 5px;"
+      /></a>
+      <a href="/" class="">NEWS</a>
+      <a href="/about">ABOUT</a>
+      <div>
+        <a href="/gb/index.html">GB</a>
+        <a href="/fr/index.html">FR</a>
+        <a href="/tr/index.html">TR</a>
+        <a href="/about" style="padding: 0 10px;">
+          <img
+            src="/img/world-white.png"
+            width="23px"
+            height="23px"
+            style="padding: 0; margin: 0; margin-top: 5px;"
+          />
+        </a>
+      </div>
+    </header>
+    <div class="bg-yellow"></div>
+    <div class="content">
+      {{ content | safe }}
     </div>
-  </header>
-  <div class="bg-yellow"></div>
-  <div class="content">
-    {{ content | safe }}
-  </div>
-  <script src="/js/vibe.js"></script>
-</body>
+    <script src="/js/main.js"></script>
+  </body>
 </html>

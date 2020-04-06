@@ -1,15 +1,16 @@
 ---
-title: About page for you
+title: About
 layout: base.njk
 ---
 
 <div class="container">
     <h1>About</h1>
-    <p>It was made for you using HTML, CSS and Javascript. 
+    <p style="display: grid; padding: 0 50px;">It was made for you using HTML, CSS and Javascript. 
     And served as a JAMStack site.</p>
 </div>
-
-{% for item in news %}
-  <a class="country" href="/{{ item.country }}">{{ item.country }}</a>
-{% endfor %}
+<div class="countries">
+  {% for item in news %}
+    <a class="country" href="/{{ item.country }}">{{ item.country }}</a>
+  {% endfor %}
+</div>
 

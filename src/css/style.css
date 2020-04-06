@@ -1,13 +1,13 @@
 :root {
-  --yellow: #FFD200;
+  --yellow: #ffd200;
   --black: #171717;
-  --white: #FFFFFF;
-  --orange: #FF4F28;
-  --cardbg:#F5F5F5;
+  --white: #ffffff;
+  --orange: #ff4f28;
+  --cardbg: #f5f5f5;
 }
 
 html {
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
   box-sizing: border-box;
   font-weight: 900;
 }
@@ -74,7 +74,7 @@ header div a {
 
 .container h1 {
   font-size: 6rem;
-  color: #FF2E00;
+  color: #ff2e00;
   text-shadow: 4px 6px 1px rgba(0, 0, 0, 0.25);
   margin: 0 auto;
 
@@ -85,15 +85,14 @@ header div a {
   padding: 0 50px;
   display: grid;
   gap: 20px;
-  grid-template-columns: repeat(auto-fit,minmax(200px,1fr));
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   margin-top: 80px;
 }
 
-.newsImg{
+.newsImg {
   width: 100% !important;
   height: 100% !important;
   object-fit: cover;
-
 }
 
 .news img {
@@ -107,6 +106,7 @@ header div a {
   list-style: none;
   font-size: 0.8rem;
   padding: 5px 15px;
+  max-width: 400px;
   /* height: auto; */
   display: grid;
   grid-template-rows: 1fr 150px 40px;
@@ -117,11 +117,10 @@ header div a {
   background-color: var(--cardbg);
   color: black;
   box-shadow: 4px 6px 4px rgba(0, 0, 0, 0.25);
-  border-radius: 0px 0px 8px 0px;  
+  border-radius: 0px 0px 8px 0px;
 }
 .news li:nth-child(even) a {
   color: black;
-
 }
 .news li:nth-child(odd) {
   background-color: var(--black);
@@ -129,10 +128,9 @@ header div a {
   box-shadow: 4px 6px 4px rgba(0, 0, 0, 0.25);
   border-radius: 0px 0px 8px 0px;
 }
-.news li:nth-child(odd) a{
+.news li:nth-child(odd) a {
   color: white;
 }
-
 
 .hidden {
   display: none;
@@ -182,12 +180,24 @@ h2 {
 .country {
   background-color: var(--black);
   color: white;
-  padding: 5px 10px;
+  padding: 5px 15px;
   text-transform: uppercase;
+  justify-content: center;
+  font-size: 1.5rem;
+  font-weight: 300;
+  display: grid;
 }
-
 
 .active {
   color: var(--orange);
   border-bottom: 3px solid var(--orange);
+}
+
+.countries {
+  /* margin: 0 auto;
+  padding: 0 30px; */
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(35px, 50px));
+  gap: 5px;
+  padding: 20px 50px;
 }
