@@ -4,10 +4,11 @@
   --white: #ffffff;
   --orange: #ff4f28;
   --cardbg: #f5f5f5;
+  --red: #ff0000;
 }
 
 html {
-  font-family: "Montserrat", sans-serif;
+  font-family: 'Montserrat', sans-serif;
   box-sizing: border-box;
   font-weight: 900;
 }
@@ -25,7 +26,7 @@ a {
   text-decoration: none;
 }
 
-header {
+.navbar {
   background-color: var(--yellow);
   display: flex;
   justify-content: flex-end;
@@ -34,20 +35,19 @@ header {
   padding-top: 50px;
   padding-right: 50px;
 }
-header a {
-  font-size: 2.3rem;
+.navbar a {
+  font-size: 1.5rem;
   font-weight: 100;
-  margin-right: 13px;
   color: var(--black);
-  margin-right: 40px;
+  margin-right: 30px;
 }
-header a:hover {
+.navbar a:hover {
   color: var(--orange);
   transition: 0.2s;
   border-bottom: 3px solid var(--orange);
 }
 
-header div {
+.navbar div {
   display: grid;
   align-items: center;
   grid-template-columns: 1fr 1fr 1fr 1fr;
@@ -55,14 +55,14 @@ header div {
   padding: 0;
 }
 
-header div a {
+.navbar div a {
   color: var(--white);
   background-color: var(--black);
   width: max-content;
   padding: 2px 10px;
   box-shadow: 2px 3px 3px rgba(0, 0, 0, 0.25);
   border-radius: 1px;
-  font-size: 1.5rem;
+  font-size: 1.1rem;
   text-align: center;
   font-weight: 100;
   margin-right: 10px;
@@ -77,7 +77,7 @@ header div a {
   color: #ff2e00;
   text-shadow: 4px 6px 1px rgba(0, 0, 0, 0.25);
   margin: 0 auto;
-
+  font-weight: bolder;
   margin-left: 40px;
 }
 
@@ -85,7 +85,7 @@ header div a {
   padding: 0 50px;
   display: grid;
   gap: 20px;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   margin-top: 80px;
 }
 
@@ -107,10 +107,14 @@ header div a {
   font-size: 0.8rem;
   padding: 5px 15px;
   max-width: 400px;
-  /* height: auto; */
   display: grid;
   grid-template-rows: 1fr 150px 40px;
   gap: 5px;
+}
+
+.news li a:hover {
+  text-decoration: underline;
+  transition: all 0.3s;
 }
 
 .news li:nth-child(even) {
@@ -153,7 +157,7 @@ header div a {
   grid-template-columns: 30px 1fr;
   align-items: center;
   justify-items: start;
-  gap: 5px;
+  gap: 1px;
   padding: 5px;
 }
 .bottom span {
@@ -165,16 +169,16 @@ h2 {
   margin-bottom: 0;
 }
 
-.favorite {
+#favorite {
   padding: 0;
-  margin-right: 15px;
-  font-size: 1.5rem;
+  margin-right: 20px !important;
+  font-size: 0.7rem;
 }
 
-.favorite:hover {
+#favorite:hover {
   transition: 0.2s;
   border-bottom: 3px solid var(--orange);
-  margin-top: 3px;
+  margin-top: -1px;
 }
 
 .country {
@@ -189,15 +193,40 @@ h2 {
 }
 
 .active {
-  color: var(--orange);
   border-bottom: 3px solid var(--orange);
+  color: var(--orange) !important;
 }
 
 .countries {
-  /* margin: 0 auto;
-  padding: 0 30px; */
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(35px, 50px));
   gap: 5px;
   padding: 20px 50px;
+}
+
+@media screen and (max-width: 600px) {
+  .navbar {
+    padding: 15px 40px;
+    display: grid;
+    grid-template-columns: 43px 1fr 1fr;
+  }
+  .navbar div {
+    display: grid;
+    grid-column: span 3;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 5px;
+    margin-left: 5px;
+    margin-top: 10px;
+  }
+  .navbar div a {
+    width: 100%;
+  }
+  .navbar a {
+    padding: 0;
+    margin: 0;
+    justify-self: center;
+  }
+  .container h1 {
+    font-size: 4rem;
+  }
 }

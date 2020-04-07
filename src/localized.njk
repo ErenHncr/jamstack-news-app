@@ -1,5 +1,5 @@
 ---
-title: Localized Content
+title: News
 layout: base.njk
 pagination:
   data: news
@@ -10,13 +10,15 @@ permalink: /{{ news.country }}/index.html
 
 <div class="container">
   <h1>news</h1>
-  {# <div id="weather" class="hidden">
+  {#
+  <div id="weather" class="hidden">
     <h2>Weather near you</h2>
     <p class="city"></p>
     <p class="temp"></p>
     <p class="main"></p>
     <p class="main"></p>
-  </div> #}
+  </div>
+  #}
 
   <ul class="news">
     {% for article in news.articles %}
@@ -36,7 +38,10 @@ permalink: /{{ news.country }}/index.html
           onmouseover="onFavImg(this)"
           onmouseout="outFavImg(this)"
         >
-          <img src="/img/start.png" width="15px" height="15px" />
+          <img
+            src="/img/start.png"
+            style="width: 23px !important; height: 23px !important;"
+          />
         </span>
         <span>{{ article.source.name }}</span>
       </div>
@@ -46,3 +51,8 @@ permalink: /{{ news.country }}/index.html
 </div>
 
 <script src="/js/weather.js"></script>
+<script>
+  window.addEventListener('DOMContentLoaded', (event) => {
+    document.querySelector('.navbar').children[1].className = 'active';
+  });
+</script>

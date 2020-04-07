@@ -9,3 +9,10 @@ layout: base.njk
 </div>
 
 <script src="/js/favorites.js"></script>
+<script>
+window.addEventListener('DOMContentLoaded', (event) => {
+  event.preventDefault();
+  document.querySelector('.navbar').children[0].className = 'active';
+  document.querySelector('.navbar').children[0].children[0].src = '/img/orangestar.png';
+});
+</script>
