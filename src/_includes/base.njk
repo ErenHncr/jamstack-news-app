@@ -12,12 +12,20 @@
   </head>
   <body>
     <header class="navbar">
+      <a href="/" class="logo">
+        <img
+          src="/img/newslogo.png"
+          width="30px"
+          height="30px"
+          style="margin-top: 5px;"
+        />
+      </a>
       <a
         id="favorite"
         href="/favorites"
         onmouseover="changeImg(this)"
         onmouseout="defaultImg(this)"
-        ><img 
+        ><img
           src="/img/star.png"
           width="22px"
           height="22px"
@@ -40,9 +48,29 @@
       </div>
     </header>
     <div class="bg-yellow"></div>
+    <div class="social">
+      <a
+        title="twitter"
+        href="https://twitter.com/ErenHncr"
+        style="align-self: end;"
+      >
+        <i class="fab fa-twitter"></i>
+      </a>
+      <a
+        title="github"
+        href="https://github.com/erenhncr"
+        style="align-self: start;"
+      >
+        <i class="fab fa-github"></i>
+      </a>
+    </div>
     <div class="content">
       {{ content | safe }}
     </div>
     <script src="/js/main.js"></script>
+    <script
+      src="https://kit.fontawesome.com/47483f01ff.js"
+      crossorigin="anonymous"
+    ></script>
   </body>
 </html>

@@ -63,7 +63,7 @@ function changeImg() {
 }
 
 function defaultImg(e) {
-  if (e.children[0].src == '/img/start.png') {
+  if (document.querySelector('.navbar').children[1].className != 'active') {
     document.querySelector('#favorite').children[0].src = '/img/star.png';
   }
 }
