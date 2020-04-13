@@ -1,12 +1,15 @@
 let news = document.querySelector('.news');
 window.addEventListener('DOMContentLoaded', (e) => {
-  if (localStorage.getItem('news') != undefined) {
+  if (
+    localStorage.getItem('news') != undefined ||
+    localStorage.getItem('news') != []
+  ) {
     let articles = JSON.parse(localStorage.getItem('news'));
     articles.forEach((article) => {
       news.innerHTML += `
       <li class="${article.title} ${article.source} ${article.url} ${article.urlToImage}">
       <h2>
-        <a href="${article.url}">${article.title}</a>
+        <a href="${article.url}" target="_blank">${article.title}</a>
       </h2>
       <img class="newsImg" src="${article.urlToImage}" />
       <div class="bottom">
